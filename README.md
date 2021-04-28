@@ -1,4 +1,8 @@
 # Code Platoon LIVE Bootcamp Prep 2021
+
+![Code Platoon Banner](https://i.imgur.com/RP10OK7.png)
+
+
 ### About this Event
 Code Platoon Bootcamp Prep is a three-week, nine-session program designed for individuals with some introductory experience with programming and is looking for another opportunity to explore their interest in software development. This program will prepare participants for completing the Code Platoon application assessments.
 
