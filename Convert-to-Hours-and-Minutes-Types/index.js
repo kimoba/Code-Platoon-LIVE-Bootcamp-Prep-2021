@@ -1,21 +1,24 @@
 function hoursMinutes(minutes) {
-  hours = minutes / 60  // get hours by dividing minutes by 60
-  minutes = minutes % 60  // get remainder from dividing minutes by 60
+  let hours = (minutes - minutes % 60) / 60  // get hours by dividing minutes subtracted by the remainder by 60
+  let remainingMinutes = minutes % 60  // get remainder from dividing minutes by 60
+  let isMinutePlural = remainingMinutes === 1 ? "minute" : "minutes"
+  let isHourPlural = hours === 1 ? "hour" : "hours"
   //console.log(hours, minutes) // check values
 
-  if (hours === 1 && minutes === 0) {
-    // just 1 hour by itself
-    return `${Math.round(hours)} hour` 
-  } else if (hours === (61/60) && minutes === 1) {
-    // 1 hour and 1 minutes exact
-    return `${Math.round(hours)} hour and ${minutes} minute`
-  } else if (minutes === 1) {
-    // X hours and 1 minute
-    return `${Math.round(hours)} hours and ${minutes} minute`
-  } else {
-    // X hours and Y minutes
-    return `${Math.round(hours)} hours and ${minutes} minutes`
-  }
+  // TERNARY OPERATOR
+  // condition ? exprIfTrue : exprIfFalse
+  // let isHourPlural = hours === 1 ? "hour" : "hours"
+  // IS BASICALLY:
+  // if (hours === 1) {
+  //   isHourPlural = "hour"
+  // } else {
+  //   isHourPlura = "hours"
+  // }
+
+  return `${hours} ${isHourPlural} and ${remainingMinutes} ${isMinutePlural}`
 }
 
-hoursMinutes(121)
+hoursMinutes(125) // => '2 hours and 5 minutes'
+hoursMinutes(75) // => '1 hour and 15 minutes'
+hoursMinutes(55) // => '0 hours and 55 minutes'
+hoursMinutes(121) // => '2 hours and 1 minute'
