@@ -19,8 +19,27 @@ console.log(blackjack(20)) // ==> stand
 console.log(blackjack(23)) // ==> bust
 
 
+
+// SWITCH CASE VER
+const blackjack2 = sum => {
+  switch (true) {
+    case sum > 21 :
+      return "bust"
+    case sum >= 15 && sum <= 21:
+      return "stand"
+    case sum < 15:
+      return "hit"
+  }
+}
+
+// console.log(blackjack2(5)) // ==> hit
+// console.log(blackjack2(20)) // ==> stand
+// console.log(blackjack2(23)) // ==> bust
+
+
+
 // IF ELSE VERSION
-function blackjack2(sum) {
+function blackjack3(sum) {
   if (sum > 21) {
     return "bust"  // greater than 21
   } else if (sum >= 15 && sum <= 21) {
@@ -30,7 +49,6 @@ function blackjack2(sum) {
   }
 }
 
-console.log(blackjack2(5)) // ==> hit
-console.log(blackjack2(20)) // ==> stand
-console.log(blackjack2(23)) // ==> bust
-
+// console.log(blackjack3(5)) // ==> hit
+// console.log(blackjack3(20)) // ==> stand
+// console.log(blackjack3(23)) // ==> bust
