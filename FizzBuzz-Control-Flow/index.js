@@ -10,6 +10,27 @@ But for multiples of three assign the key's value to equal “Fizz” instead of
 
 const fizzBuzz = (num) => {
   let fizzBuzzResults = {}  // create empty object
+  for (let i = 1; i <= num; i++) { // start at 0 loop until i = num aka 100
+    if (i % 3 == 0 && i % 5 == 0) {
+    fizzBuzzResults[i] = "FizzBuzz"  // add key [i]. if multiple of 3 and 5 value is FizzBuzz
+    } else if (i % 3 == 0) {
+    fizzBuzzResults[i] = "Fizz"  // add key [i]. if multiple of 3 value is Fizz
+    } else if (i % 5 == 0) {
+    fizzBuzzResults[i] = "Buzz"  // add key [i]. if multiple of 5 value is Buzz
+    } else {
+    fizzBuzzResults[i] = i  // add key [i]. if not a multipe of 3 or 5 value is the number
+    }
+  }
+  return fizzBuzzResults
+}
+
+fizzBuzz(100)
+
+
+// FUNCTION IN FUNCTION VER
+
+const fizzBuzz2 = (num) => {
+  let fizzBuzzResults = {}  // create empty object
   for (i = 1; i <= num; i++) { // start at 0 loop until i = num aka 100
   fizzBuzzResults[i] = findValue(i)  // add new obj entry
   ///console.log(fizzBuzzResults)
@@ -29,7 +50,7 @@ let findValue = (someNum) => {
   }
 }
 
-fizzBuzz(100)
+// fizzBuzz2(100)
  
 //=> 
 // { 1: 1,
