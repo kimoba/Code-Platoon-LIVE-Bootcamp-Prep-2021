@@ -5,8 +5,8 @@ function enterTheBar(age) {
   return (age < 21 ? false : true) // condition ? exprIfTrue : exprIfFalse
 }
 
-console.log((enterTheBar(21))) // ==> True
-console.log((enterTheBar(19))) // ==> False
+console.log(enterTheBar(21)) // ==> True
+console.log(enterTheBar(19)) // ==> False
 
 // IF/ELSE
 function enterTheBar2(age) {
@@ -17,5 +17,5 @@ function enterTheBar2(age) {
   }
 }
 
-// console.log((enterTheBar2(21))) // ==> True
-// console.log((enterTheBar2(19))) // ==> False
+// console.log(enterTheBar2(21)) // ==> True
+// console.log(enterTheBar2(19)) // ==> False
