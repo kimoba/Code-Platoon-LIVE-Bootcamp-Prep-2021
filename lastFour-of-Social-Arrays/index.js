@@ -8,8 +8,7 @@ Write a function that takes in a number that represents a social security number
 // METHOD 1
 // toString & slice
 let lastFour = socSec => {
-  socSec = socSec.toString()
-  return socSec.slice(socSec.length - 4)
+  return socSec.toString().slice(socSec.toString().length - 4)
 }
 
 console.log(lastFour(546800156)) //-> 0156
