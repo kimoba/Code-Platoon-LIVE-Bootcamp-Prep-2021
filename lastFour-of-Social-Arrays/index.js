@@ -5,14 +5,11 @@ Write a function that takes in a number that represents a social security number
 
 */
 
-
 // METHOD 1
-// toString + split + slice + join
+// toString & slice
 let lastFour = socSec => {
   socSec = socSec.toString()
-  length = socSec.length
-
-  return socSec.split("").slice(length - 4).join("")
+  return socSec.slice(socSec.length - 4)
 }
 
 console.log(lastFour(546800156)) //-> 0156
@@ -21,8 +18,22 @@ console.log(lastFour(855790769)) //-> 0769
 
 
 // METHOD 2
+// toString + split + slice + join
+let lastFour2 = socSec => {
+  socSec = socSec.toString()
+  length = socSec.length
+
+  return socSec.split("").slice(length - 4).join("")
+}
+
+// console.log(lastFour2(546800156)) //-> 0156
+// console.log(lastFour2(657698357)) //-> 8357
+// console.log(lastFour2(855790769)) //-> 0769
+
+
+// METHOD 3
 // toString + new string + for loop + split + reverse + join
-let lastFour2 = (socSec) => {
+let lastFour3 = (socSec) => {
   socSec = socSec.toString()
   let lastFourSSN = ""
   // console.log(socSec.length - 1)
@@ -34,6 +45,6 @@ let lastFour2 = (socSec) => {
   return lastFourSSN.split("").reverse().join("")
 }
 
-// console.log(lastFour2(546800156)) //-> 0156
-// console.log(lastFour2(657698357)) //-> 8357
-// console.log(lastFour2(855790769)) //-> 0769
+// console.log(lastFour3(546800156)) //-> 0156
+// console.log(lastFour3(657698357)) //-> 8357
+// console.log(lastFour3(855790769)) //-> 0769
