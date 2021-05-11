@@ -8,6 +8,27 @@ There are a couple variable naming conventions in programming. They are camelCas
 
 */
 
+
+
+// array version
+
+let makeCamelCase = (input) => {
+  let array = input.split("_")
+  for (let i = 1; i < array.length; i++) {
+    array[i] = array[i].charAt(0).toUpperCase() + array[i].slice(1)
+  }
+  return array.join("")
+}
+
+console.log(makeCamelCase("my_name_is_kramer"))  // => myNameIsKramer
+console.log(makeCamelCase("first_name"))  // => firstName
+console.log(makeCamelCase("array_of_names"))  // => arrayOfNames
+
+
+
+
+// string version
+
 let makeCamelCase = (input) => {
   let camelCaseResult = ""
   for (let i = 0; i < input.length; i++){
