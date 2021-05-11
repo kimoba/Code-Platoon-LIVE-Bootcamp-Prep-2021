@@ -19,14 +19,15 @@ let canNav = (velocity, boatType) => {
     case "ship":
     return (velocity < 15 ? true : false)
   }
+  return "Please enter a valid boat type."  // if none of the cases match
 }
 
-// console.log(canNav(2, "rowboat")) // => true
-// console.log(canNav(3, "rowboat")) // => false
-// console.log(canNav(3, "sailboat"))  // => true
-// console.log(canNav(3, "SaIlboAt"))  // => true
-// console.log(canNav(20, "ship"))  // => false
-
+console.log(canNav(2, "rowboat")) // => true
+console.log(canNav(3, "rowboat")) // => false
+console.log(canNav(3, "sailboat"))  // => true
+console.log(canNav(3, "SaIlboAt"))  // => true
+console.log(canNav(20, "ship"))  // => false
+console.log(canNav(20, "honda civic"))  // => false
 
 
 // IF ELSE SHORTER
@@ -40,6 +41,9 @@ let canNav3 = (velocity, boatType) => {
   }
   else if (boatType == "ship" && velocity < 15) {
     return true
+  }
+  if (boatType === "rowboat" || boatType === "sailboat" || boatType === "ship") {
+    return "Please enter a valid boat type."
   }
   else return false
 }
@@ -75,6 +79,7 @@ function canNav2(velocity, boatType){
       return false
     }
   }
+  return "Please enter a valid boat type."
 }
 
 // console.log(canNav(2, "rowboat")) // => true
