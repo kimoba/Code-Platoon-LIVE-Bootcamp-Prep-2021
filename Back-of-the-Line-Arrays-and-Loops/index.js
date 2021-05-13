@@ -6,9 +6,38 @@ The expected output is the arrOfNames with the names in their new positions
 
 */
 
+// IF ELSE
+
 let arrOfNames = ['kyle', 'stacy', 'tina', 'kenisha', 'greg']
 
-let backOfTheLine = (arrOfNames, numOfPositions) => {
+let backOfTheLine = (arrOfName, numOfPositions) => {
+  if (numOfPositions > 0) {
+    for (let i = 0; i < numOfPositions; i++) {
+      let nameToMove = arrOfName.pop()
+      arrOfName.unshift(nameToMove)
+    }
+  } else if (numOfPositions < 0) {
+    for (let i = 0; i > numOfPositions; i--) {
+      let nameToMove = arrOfName.shift()
+      arrOfName.push(nameToMove)
+    }
+  }
+  return arrOfNames
+}
+
+// test one at a time since it's a global variable, or create a clean new variable for each test
+
+console.log(backOfTheLine(arrOfNames, 2)) //-> ['kenisha', 'greg', 'kyle', 'stacy', 'tina']
+console.log(backOfTheLine(arrOfNames, -1)) //-> ['stacy', 'tina', 'kenisha', 'greg', 'kyle']
+
+
+
+
+
+
+// IF WHILE
+
+let backOfTheLine2 = (arrOfNames, numOfPositions) => {
   let counter = numOfPositions
   if (numOfPositions > 0) {
     while (counter > 0) {
@@ -29,5 +58,5 @@ let backOfTheLine = (arrOfNames, numOfPositions) => {
   return arrOfNames
 }
 
-console.log(backOfTheLine(arrOfNames, 2)) //-> ['kenisha', 'greg', 'kyle', 'stacy', 'tina']
-console.log(backOfTheLine(arrOfNames, -1)) //-> ['stacy', 'tina', 'kenisha', 'greg', 'kyle']
+// console.log(backOfTheLine2(arrOfNames, 2)) //-> ['kenisha', 'greg', 'kyle', 'stacy', 'tina']
+// console.log(backOfTheLine2(arrOfNames, -1)) //-> ['stacy', 'tina', 'kenisha', 'greg', 'kyle']
